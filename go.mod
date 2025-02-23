@@ -1,4 +1,4 @@
-module github.com/KevinMidkiff/readunread
+module github.com/KevinMidkiff/unreadread
 
 go 1.24.0
 
