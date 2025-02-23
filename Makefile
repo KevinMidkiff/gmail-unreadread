@@ -10,3 +10,4 @@ run:
 
 clean:
 	go clean
+	rm token.json
