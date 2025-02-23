@@ -64,6 +64,9 @@ func (u *UnreadRead) ProcessUnreadMsgs() error {
 			numUnmarked, totalElapsed.Elapsed(), listElapsed, enqueueElapsed)
 	}
 
+	log.Println("Finished enqueuing all unread, waiting for workers to complete")
+	u.wg.Wait()
+
 	return nil
 }
 
@@ -86,7 +89,7 @@ func worker(id int, srv *gmail.Service, msgIds <-chan string, wg *sync.WaitGroup
 		numProcessed++
 		if numProcessed%10 == 0 || numProcessed == 1 {
 			elapsed := sw.Elapsed()
-			avg := float64(numProcessed) / elapsed.Seconds()
+			avg := elapsed.Seconds() / float64(numProcessed)
 			log.Printf("[job:%d] Marked %d messages read (avg: %f, elapsed: %s)", id, numProcessed, avg, elapsed)
 		}
 	}
