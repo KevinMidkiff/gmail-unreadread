@@ -37,6 +37,11 @@ Below are a rough set of instructions to set this up:
 7. In the "Scopes" options, add the following
     - `https://mail.google.com/`
     - `https://www.googleapis.com/auth/gmail.modify`
+    - `https://www.googleapis.com/auth/gmail.readonly`
+    - `https://www.googleapis.com/auth/gmail.metadata
+    > This access is based on docs for the two APIs used by this project (listed below)
+    > * [`users.messages.list`](https://developers.google.com/gmail/api/reference/rest/v1/users.messages/list)
+    > * [`users.messages.modify`](https://developers.google.com/gmail/api/reference/rest/v1/users.messages/modify)
 8. For the "OAuth Client ID" Application Type, select "Desktop app"
 9. Download the credentials at the end, save them to the `credentials.json` file in this application
 10. In "Audience" for the app, add your email you wish to clear of unread emails to the "Test users"
