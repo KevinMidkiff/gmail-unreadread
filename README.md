@@ -52,5 +52,3 @@ unread emails, which comes back in batches of 100. For some reason, the
 `NextPageToken` token might not be being used correctly.
 
 The fix for this is to re-run this as you get to the end of the unread emails.
-
-## Useful Resources
