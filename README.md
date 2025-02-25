@@ -47,13 +47,3 @@ Below are a rough set of instructions to set this up:
 10. In "Audience" for the app, add your email you wish to clear of unread emails to the "Test users"
 
 You should ideally be good to go.
-
-## Known Issues
-
-### Continual Enqueuing of "unread" Emails
-
-The way this application works is it queries the Gmail API to give it
-unread emails, which comes back in batches of 100. For some reason, the 
-`NextPageToken` token might not be being used correctly.
-
-The fix for this is to re-run this as you get to the end of the unread emails.

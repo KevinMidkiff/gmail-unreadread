@@ -65,6 +65,7 @@ func (u *UnreadRead) ProcessUnreadMsgs() error {
 	}
 
 	log.Println("Finished enqueuing all unread, waiting for workers to complete")
+	close(u.msgIds)
 	u.wg.Wait()
 
 	return nil
